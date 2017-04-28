@@ -23,7 +23,7 @@ Use **Update-AzureRmServiceFabricDurability** to update durability and SKU of a 
 
 ### Example 1
 ```
-PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName clusterresourcegroup -ClusterName mycluster -Level Silver -NodeTypeName nt1
+PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName clusterresourcegroup -ClusterName mycluster -DurabilityLevel Silver -NodeTypeName nt1
 ```
 
 This command changes durability level of the node type 'nt1' to silver.
