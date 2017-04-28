@@ -7,7 +7,7 @@ schema: 2.0.0
 # Add-AzureRmServiceFabricApplicationCertificate
 
 ## SYNOPSIS
-Add a new certificate to the Virtual machine scale sets that make up the cluster. The intent of this certificate is for use as an application certificate.
+Add a new certificate to the Virtual Machine Scale Set(s) that make up the cluster. The certificate is intended to be used as an application certificate.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Add-AzureRmServiceFabricApplicationCertificate [-ResourceGroupName] <String> [-N
 ```
 
 ## DESCRIPTION
-TUse **Add-AzureRmServiceFabricApplicationCertificate** to install a certificate to the all nodes in the cluster. You can specify a certificate you already have or have the system generate a new one for you and upload it to a new or existing Azure key vault.
+Use **Add-AzureRmServiceFabricApplicationCertificate** to install a certificate to all nodes in the cluster. You can specify a certificate you already have or have the system generate a new one for you, and upload it to a new or existing Azure key vault.
 
 ## EXAMPLES
 
@@ -42,7 +42,7 @@ PS c:> Add-AzureRmServiceFabricApplicationCertificate -ResourceGroupName 'Group1
 -CertificateThumprint 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A
 ```
 
-This command will add a certificate from existing Azure key vault to all node types of the cluster named myCluster
+This command will add a certificate from an existing Azure key vault to all node types of the cluster myCluster.
 
 ### Example 2
 ```
@@ -51,12 +51,12 @@ PS C:\> Add-AzureRmServiceFabricApplicationCertificate -ResourceGroupName 'Group
 -PfxDestinationFile 'c:\newcert.pfx' -Password  $pwd  -CertificateDnsName 'Contoso.com''
 ```
 
-This command will add certificate by creating an new self signed certificate and uploading to Azure key vault, then installs to all node types of the cluster
+This command will add a certificate by creating an new self signed certificate, uploading it to Azure key vault, and then will install it to all node types of the cluster.
 
 ## PARAMETERS
 
 ### -CertificatePassword
-The password of the pfx file.
+The password of the .pfx file.
 
 ```yaml
 Type: SecureString
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateSubjectName
-The certificate subject name of the certificate.
+The certificate's subject name.
 
 ```yaml
 Type: String
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumprint
-The thumprint for the certificate.
+The thumprint of the certificate.
 
 ```yaml
 Type: String
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

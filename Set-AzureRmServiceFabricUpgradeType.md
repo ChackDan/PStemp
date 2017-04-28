@@ -24,7 +24,7 @@ Set-AzureRmServiceFabricUpgradeType [-ResourceGroupName] <String> [-Name] <Strin
 ```
 
 ## DESCRIPTION
-Use **Set-AzureRmServiceFabricUpgradeType** set upgrade type to automatic or manual with specific ServiceFabric code version.
+Use **Set-AzureRmServiceFabricUpgradeType** set upgrade type to automatic or manual with a specific ServiceFabric code version.
 
 ## EXAMPLES
 
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Name of the cluster
+Name of the cluster.
 
 ```yaml
 Type: String

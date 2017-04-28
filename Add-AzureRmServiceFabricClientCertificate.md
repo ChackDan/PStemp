@@ -37,7 +37,7 @@ Add-AzureRmServiceFabricClientCertificate [-ResourceGroupName] <String> [-Name] 
 ```
 
 ## DESCRIPTION
-Use **Add-AzureRmServiceFabricClientCertificate** to add common name and issuer thumbprint or certificate thumbprint to the cluster, so that the client can use it for authentication.
+Use **Add-AzureRmServiceFabricClientCertificate** to add a common name and issuer thumbprint or certificate thumbprint to the cluster, so that the client can use it for authentication.
 
 ## EXAMPLES
 
@@ -46,7 +46,7 @@ Use **Add-AzureRmServiceFabricClientCertificate** to add common name and issuer 
 PS c:> Add-AzureRmServiceFabricApplicationCertificate -ResourceGroupName myResourceGroup -ClusterName myCluster -Thumbprint 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A -IsAdmin true
 ```
 
-This command will add thumbprint with 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A to the cluster, and its role is admin, so the client use the certificate to communicate with the cluster
+This command will add a thumbprint "5F3660C715EBBDA31DB1FFDCF508302348DE8E7A" to the cluster with admin privileges, so the client can use the certificate to communicate with the cluster.
 
 ### Example 1
 ```
@@ -54,12 +54,12 @@ PS C:\> $table=@{"abc.com;AF06E4BFCBA05DCB59C42720136EC19DBA0A8E9F"="true";"test
 PS C:\> Add-AzureRmServiceFabricClientCertificate -CommonNameIssuersAndFlags $table -ClusterName testclusterpowershell2 -ResourceGroupName newsftestrg2
 ```
 
-This command will add two client certificates one with admin access , the other one with ready-only access by common name and issuer thumbprint to the cluster.
+This command will add two client certificates: one with admin access, the other one with ready-only access by common name and issuer thumbprint to the cluster.
 
 ## PARAMETERS
 
 ### -Admin
-Client authentication type
+Client authentication type.
 
 ```yaml
 Type: SwitchParameter
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -AdminClientThumbprints
-Specify client certificate thumbprint which only has admin permission
+Specify a client certificate thumbprint which has admin permission.
 
 ```yaml
 Type: String[]
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommonName
-Specify client certificate common name
+Specify the client certificate common name.
 
 ```yaml
 Type: String
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommonNames
-Client certificate common name , issuer thumbprint and authentication type.
+Client certificate common name, issuer thumbprint and authentication type.
 
 ```yaml
 Type: PSClientCertificateCommonName[]
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReadonlyClientThumbprints
-Client certificate thumbprint which only has read only permission.
+Client certificate thumbprint which only has read only permissions=.
 
 ```yaml
 Type: String[]

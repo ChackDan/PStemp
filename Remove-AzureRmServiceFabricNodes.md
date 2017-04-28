@@ -17,7 +17,7 @@ Remove-AzureRmServiceFabricNodes [-ResourceGroupName] <String> [-Name] <String> 
 ```
 
 ## DESCRIPTION
-Use **Remove-AzureRmServiceFabricNodes** to remove nodes from specific node type from a cluster. The removal proceeds only if it meets clsuter health metrics. 
+Use **Remove-AzureRmServiceFabricNodes** to remove nodes from a specific node type from a cluster. The removal proceeds only if it meets cluster health metrics. 
 
 ## EXAMPLES
 
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Name of the cluster
+Name of the cluster.
 
 ```yaml
 Type: String
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-Node type name
+Node type name.
 
 ```yaml
 Type: String
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Number
-Number of nodes to remove
+Number of nodes to remove.
 
 ```yaml
 Type: Int32

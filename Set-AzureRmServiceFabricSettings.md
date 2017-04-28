@@ -7,7 +7,7 @@ schema: 2.0.0
 # Set-AzureRmServiceFabricSettings
 
 ## SYNOPSIS
-Add or update one or multiple ServiceFabric settings in a cluster.
+Add or update one or more ServiceFabric settings in a cluster.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Set-AzureRmServiceFabricSettings [-ResourceGroupName] <String> [-Name] <String>
 ```
 
 ## DESCRIPTION
-Use **Set-AzureRmServiceFabricSettings** to add or update ServiceFabric settings in the cluster.
+Use **Set-AzureRmServiceFabricSettings** to add or update ServiceFabric settings in a cluster.
 
 ## EXAMPLES
 
@@ -66,7 +66,7 @@ PS c:\>$arry=$settingsSectionDescription1 , $settingsSectionDescription2
 PS c:\> Set-AzureRmServiceFabricSettings -SettingsSectionDescriptions $arry -ClusterName myclustername -ResourceGroupName clusterresourcegroup
 ```
 
-This example updates a set of fabric settings.
+This example updates a set of various fabric settings.
 
 ## PARAMETERS
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -Parameter
-Parameter
+Parameter.
 
 ```yaml
 Type: String
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -Section
-Section
+Section.
 
 ```yaml
 Type: String
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Config Value
+Config Value.
 
 ```yaml
 Type: String

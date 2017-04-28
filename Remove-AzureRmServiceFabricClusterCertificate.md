@@ -7,7 +7,7 @@ schema: 2.0.0
 # Remove-AzureRmServiceFabricClusterCertificate
 
 ## SYNOPSIS
-Remove cluster certificate from being used for cluster security in a cluster.
+Remove a cluster certificate from being used for cluster security.
 
 ## SYNTAX
 

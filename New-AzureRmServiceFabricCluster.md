@@ -7,7 +7,7 @@ schema: 2.0.0
 # New-AzureRmServiceFabricCluster
 
 ## SYNOPSIS
-This command uses certificates that you provide or system generated self signed certificates to set up a new service fabric cluster. The template used can be a default template or a custom template that you provide. You have the option of specifying a folder to export the self signed certificates or fetching them later from the keyvault. 
+This command uses certificates that you provide or system generated self signed certificates to set up a new service fabric cluster. It can use a default template or a custom template that you provide. You have the option of specifying a folder to export the self signed certificates to or fetching them later from the key vault. 
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-AzureRmServiceFabricCluster [-ResourceGroupName] <String> [-PfxOutputFolder 
 ```
 
 ## DESCRIPTION
-The **New-AzureRmServiceFabricCluster** command uses certificates that you provide or system generated self signed certificates to set up a new service fabric cluster. The template used can be a default template or a custom template that you provide. You have the option of specifying a folder to export the self signed certificates or fetching them later from the keyvault.
+The **New-AzureRmServiceFabricCluster** command uses certificates that you provide or system generated self signed certificates to set up a new service fabric cluster. The template used can be a default template or a custom template that you provide. You have the option of specifying a folder to export the self signed certificates or fetching them later from the key vault.
 
 If you are specifying a custom template and parameter file, you don't need to provide the certificate information in the parameter file, the system will populate these parameters.
 
@@ -53,9 +53,9 @@ The four options are detailed below. Scroll down for explanations of each of the
 
 This is the simplest of all three options, and also takes in the least amount of parameter, and so is a good one if you are new to service fabric and/or just want a test cluster to deploy your applications to.
 
-In addition to creating a new self signed cert, the command also uploads the certificate to a keyvault and uses it to deploy a secure service fabric cluster. The ClusterSize can take the values 1, 3 - 99. You can specify other optional parameters like a separate KeyVaultResouceGroupName, VmSku etc.
+In addition to creating a new self signed cert, the command also uploads the certificate to a key vault and uses it to deploy a secure service fabric cluster. The ClusterSize can take the values 1, 3 - 99. You can specify other optional parameters like a separate KeyVaultResouceGroupName, VmSku etc.
 
-The OS can take four values UbuntuServer1604, WindowsServer2012R2Datacenter, WindowsServer2016Datacenter and WindowsServer2016DatacenterwithContainers. WindowsServer2016Datacenter is the default.
+The OS can take four values: UbuntuServer1604, WindowsServer2012R2Datacenter, WindowsServer2016Datacenter, and WindowsServer2016DatacenterwithContainers. WindowsServer2016Datacenter is the default.
 
 The default VM user id is adminuser.
 
@@ -66,7 +66,7 @@ New-AzureRmServiceFabricCluster [-ResourceGroupName] <String> [-PfxOutputFolder 
  -VmPassword <SecureString> [-OS <OperatingSystem>] [-VmSku <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-Here is a filled out example to deploy a 3 node cluster. The certificate is saved to the $pfxfolder and is named $RGname+Timestamp.pfx. 
+Here is an example of deploying a 3 node cluster. The certificate is saved to the $pfxfolder and is named $RGname+Timestamp.pfx. 
 ```
 $pwd="Password#1234" | ConvertTo-SecureString -AsPlainText -Force
 $RGname="chacko09"
@@ -81,9 +81,9 @@ New-AzureRmServiceFabricCluster -ResourceGroupName $RGname -Location $clusterloc
 ```
 
 
-### Specify an existing Certificate resource in Keyvault and a custom template to deploy a cluster 
+### Specify an existing Certificate resource in a key vault and a custom template to deploy a cluster 
 
-Use this command, when you want to reuse a certificate that has already been uploaded to your keyvault.
+Use this command when you want to reuse a certificate that has already been uploaded to your key vault.
 
 ```
 New-AzureRmServiceFabricCluster [-ResourceGroupName] <String> -TemplateFile <String> -ParameterFile <String>
@@ -100,9 +100,9 @@ $secertId="https://chackokv1.vault.azure.net:443/secrets/chackdantestcertificate
 New-AzureRmServiceFabricCluster -ResourceGroupName $RGname -TemplateFile $templateFile -ParameterFile $templateParmfile -SecretIdentifier $secertId 
 ```
 
-### Create a new cluster using a custom template, Specify the different RG name for the keyvault and have the system upload the certificate to it 
+### Create a new cluster using a custom template, Specify the different RG name for the key vault and have the system upload the certificate to it 
 
-Use this command when you want to set up the keyvault in a different RG than the cluster. The system will generate a self signed cert based on the parameters you specify.
+Use this command when you want to set up the key vault in a different RG than the cluster. The system will generate a self signed cert based on the parameters you specify.
 
 ```
 New-AzureRmServiceFabricCluster [-ResourceGroupName] <String> -TemplateFile <String> -ParameterFile <String>
@@ -110,7 +110,7 @@ New-AzureRmServiceFabricCluster [-ResourceGroupName] <String> -TemplateFile <Str
  [-KeyVaultName <String>] [-CertificateSubjectName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-Here is a filled out example of the above command
+Here is an example of the above command:
 
 ```
 $pwd="Password#1234" | ConvertTo-SecureString -AsPlainText -Force
@@ -130,7 +130,7 @@ New-AzureRmServiceFabricCluster -ResourceGroupName $RGname -TemplateFile $templa
 
 ### Bring your own Certificate and custom template and create a new cluster
 
-Use this command when you already have an existing certificate (that you have generated or have bought from a CA), and want that to be uploaded to a seperate new or existing Keyvault RG and have the system create the cluster. 
+Use this command when you already have an existing certificate (that you have generated or have bought from a CA), and want it to be uploaded to a seperate new or existing key vault RG and have the system create the cluster. 
 
 ```
 New-AzureRmServiceFabricCluster [-ResourceGroupName] <String> -TemplateFile <String> -ParameterFile <String>
@@ -139,7 +139,7 @@ New-AzureRmServiceFabricCluster [-ResourceGroupName] <String> -TemplateFile <Str
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-Here is a filled out example of the above command
+Here is an example of the above command:
 
 ```
 $certPwd="Password#1234" | ConvertTo-SecureString -AsPlainText -Force
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyVaultName
-Azure key vault name 
+Azure key vault name.
 
 ```yaml
 Type: String
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyVaultResouceGroupName
-Azure key vault resource group name
+Azure key vault resource group name.
 
 ```yaml
 Type: String
@@ -263,7 +263,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-The resource group location
+The resource group location.
 
 ```yaml
 Type: String
