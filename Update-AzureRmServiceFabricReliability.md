@@ -23,7 +23,7 @@ Use **Update-AzureRmServiceFabricReliability** to update reliability of the prim
 
 ### Example 1
 ```
-PS c:> Add-AzureRmServiceFabricReliability -ResourceGroupName myResourceGroup -ClusterName myCluster -ReliabilityTier Silver
+PS c:> Add-AzureRmServiceFabricReliability -ResourceGroupName myResourceGroup -ClusterName myCluster -ReliabilityLevel Silver
 ```
 
 This command changes the reliability tier of the primary nodetype to silver.
