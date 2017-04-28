@@ -17,7 +17,7 @@ Add-AzureRmServiceFabricNodes [-ResourceGroupName] <String> [-Name] <String> -No
 ```
 
 ## DESCRIPTION
-Use **Add-AzureRmServiceFabricNodes** to add nodes to the specific node type in your cluster. You just need to specify the number of nodes you want to add to a Node Type, the system adds it to the nodetype.
+Use **Add-AzureRmServiceFabricNodes** to add nodes to the specific node type in your cluster. You just need to specify the number of nodes you want to add to a Node Type.
 
 ## EXAMPLES
 
@@ -26,7 +26,7 @@ Use **Add-AzureRmServiceFabricNodes** to add nodes to the specific node type in 
 PS c:> Add-AzureRmServiceFabricNodes -ResourceGroupName myResourceGroup -ClusterName myCluster -NumberOfNodesToAdd 2 -NodeTypeName n1
 ```
 
-This command will add 2 nodes to the node type of n1
+This command will add 2 nodes to the node type n1.
 
 ## PARAMETERS
 

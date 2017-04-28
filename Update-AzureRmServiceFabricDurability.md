@@ -7,7 +7,7 @@ schema: 2.0.0
 # Update-AzureRmServiceFabricDurability
 
 ## SYNOPSIS
-Update durability tier and VM SKU of a nodetype in a cluster.
+Update the durability tier and VMSku of a nodetype in a cluster.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <Str
 ```
 
 ## DESCRIPTION
-Use **Update-AzureRmServiceFabricDurability** to update durability and SKU of a NodeType in a cluster.
+Use **Update-AzureRmServiceFabricDurability** to update durability and Sku of a NodeType in a cluster.
 
 ## EXAMPLES
 
@@ -26,7 +26,7 @@ Use **Update-AzureRmServiceFabricDurability** to update durability and SKU of a 
 PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName clusterresourcegroup -ClusterName mycluster -Level Silver -NodeTypeName nt1
 ```
 
-This command changes durability level of the node type 'nt1' to silver.
+This command changes durability tier of the node type 'nt1' to silver.
 
 ## PARAMETERS
 
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -Level
-DurabilityTier
+DurabilityTier.
 
 ```yaml
 Type: DurabilityLevel
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sku
-SKU of the node type.
+Sku of the node type.
 
 ```yaml
 Type: String

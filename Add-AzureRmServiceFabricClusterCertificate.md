@@ -7,7 +7,7 @@ schema: 2.0.0
 # Add-AzureRmServiceFabricClusterCertificate
 
 ## SYNOPSIS
-Add a secondary cluster certificate to the cluster  
+Add a secondary cluster certificate to the cluster.
 
 ## SYNTAX
 
@@ -32,8 +32,8 @@ Add-AzureRmServiceFabricClusterCertificate [-ResourceGroupName] <String> [-Name]
 ```
 
 ## DESCRIPTION
-Use **Add-AzureRmServiceFabricClusterCertificate** to add a secondary cluster certificate, either from existing Azure key vault 
-or creating an new Azure key vault using existing certificate provided or from an new self signed certificate created 
+Use **Add-AzureRmServiceFabricClusterCertificate** to add a secondary cluster certificate, either from an existing Azure key vault
+or by creating a new Azure key vault using the existing certificate provided or from an new self signed certificate created. 
 It will override the secondary cluster if there is any.
 
 ## EXAMPLES
@@ -44,7 +44,7 @@ Add-AzureRmServiceFabricClusterCertificate -ResourceGroupName 'Group1' -ClusterN
 -SecretUrl 'https://contoso03vault.vault.azure.net/secrets/contoso03vaultrg/7f7de9131c034172b9df37ccc549524f' -CertificateThumprint 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A
 ```
 
-This command will add a certificate in the existing Azure key vault, and upgrade the certificate as secondary cluster certificate
+This command will add a certificate in the existing Azure key vault, and upgrade the certificate as secondary cluster certificate.
 
 ### Example 2
 ```
@@ -53,12 +53,12 @@ PS c:\> add-AzureRmServiceFabricClusterCertificate -ResourceGroupName 'Group2' -
 -PfxDestinationFile 'c:\newcert.pfx' -Password $pwd -CertificateDnsName 'Contoso.com'
 ```
 
-This command will add certificate by creating an new self signed certificate and uploading to Azure key vault, and upgrade the certificate as secondary cluster certificate
+This command will add a certificate by creating an new self signed certificate and uploading it to the Azure key vault, and upgrade the certificate to secondary cluster certificate.
 
 ## PARAMETERS
 
 ### -CertificatePassword
-The password of the pfx file
+The password of the .pfx file.
 
 ```yaml
 Type: SecureString
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateSubjectName
-The Dns name of the certificate to be created
+The DNS name of the certificate to be created.
 
 ```yaml
 Type: String
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumprint
-The thumprint for the Azure key vault secret
+The thumprint for the Azure key vault secret.
 
 ```yaml
 Type: String
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyVaultName
-Azure key vault name
+Azure key vault name.
 
 ```yaml
 Type: String
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyVaultResouceGroupName
-Azure key vault resource group name
+Azure key vault resource group name.
 
 ```yaml
 Type: String
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -PfxSourceFile
-The existing Pfx file path
+The existing .pfx file path
 
 ```yaml
 Type: String
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecretIdentifier
-The existing Azure key vault secret uri
+The existing Azure key vault secret uri.
 
 ```yaml
 Type: String

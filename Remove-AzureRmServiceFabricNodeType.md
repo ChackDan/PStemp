@@ -17,7 +17,7 @@ Remove-AzureRmServiceFabricNodeType [-ResourceGroupName] <String> [-Name] <Strin
 ```
 
 ## DESCRIPTION
-Use **Remove-AzureRmServiceFabricNodeType** to remove all nodes from specific node type and the node type from a cluster.  This command cannot be used to delete the primary node type
+Use **Remove-AzureRmServiceFabricNodeType** to remove all nodes from a specific node type and the node type from a cluster.  This command cannot be used to delete the primary node type
 
 ## EXAMPLES
 
@@ -26,7 +26,7 @@ Use **Remove-AzureRmServiceFabricNodeType** to remove all nodes from specific no
 PS c:> Remove-AzureRmServiceFabricNodeType -ResourceGroupName myResourceGroup -ClusterName myCluster -NodeTypeName n1
 ```
 
-This command will remove node type n1 from the cluster
+This command will remove node type n1 from the cluster.
 
 ## PARAMETERS
 
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Name of the cluster
+Name of the cluster.
 
 ```yaml
 Type: String
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-The node type name
+The node type name.
 
 ```yaml
 Type: String

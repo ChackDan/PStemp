@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -Parameter
-Parameter
+Parameter.
 
 ```yaml
 Type: String
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Section
-Section
+Section.
 
 ```yaml
 Type: String

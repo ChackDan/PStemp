@@ -7,7 +7,7 @@ schema: 2.0.0
 # Remove-AzureRmServiceFabricClientCertificate
 
 ## SYNOPSIS
-Remove a client certificate(s) or certificate subject (s) names from being used for client authenticaton to the cluster
+Remove a client certificate(s) or certificate subject(s) name(s) from being used for client authenticaton to the cluster.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Remove-AzureRmServiceFabricClientCertificate [-ResourceGroupName] <String> [-Nam
 ```
 
 ## DESCRIPTION
-Use **Remove-AzureRmServiceFabricClientCertificate** to remove a client certificate(s) or certificate subject (s) names from being used for client authenticaton to the cluster
+Use **Remove-AzureRmServiceFabricClientCertificate** to remove a client certificate(s) or certificate subject(s) name(s) from being used for client authenticaton to the cluster.
 
 ## EXAMPLES
 
@@ -54,12 +54,12 @@ PS c:> $table = @{"abc.com;AF06E4BFCBA05DCB59C42720136EC19DBA0A8E9F"=$true}
 PS c:>Remove-AzureRmServiceFabricClientCertificate -CommonNameIssuersAndFlags $table -ClusterName myclustername -ResourceGroupName myresourcegroup
 ```
 
-This command removes the certificates with  common name with abc.com and issue thumbprint of 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A from being used for client authentication to the cluster.
+This command removes the certificates with common name abc.com and issue thumbprint of 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A from being used for client authentication to the cluster.
 
 ## PARAMETERS
 
 ### -AdminClientThumbprints
-Client certificate thumbprint that have admin privilages to the cluster
+Client certificate thumbprint that has admin privileges to the cluster.
 
 ```yaml
 Type: String[]
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommonNames
-Client common names , issuer thumbprint and authentication type.
+Client common names, issuer thumbprint, and authentication type.
 
 ```yaml
 Type: PSClientCertificateCommonName[]

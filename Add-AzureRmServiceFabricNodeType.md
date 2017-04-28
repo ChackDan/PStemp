@@ -18,7 +18,7 @@ Add-AzureRmServiceFabricNodeType [-ResourceGroupName] <String> [-Name] <String> 
 ```
 
 ## DESCRIPTION
-Add a new node type to and existing cluster.
+Add a new node type to an existing cluster.
 
 ## EXAMPLES
 
@@ -27,12 +27,12 @@ Add a new node type to and existing cluster.
 PS C:\> Add-AzureRmServiceFabricNodeType -ResourceGroupName myResourceGroup -Name myCluster -NodeType n2 -InstanceCount 5 -VmUserName adminName -VmPassword Password#1234 -Sku Standand_D1_v2
 ```
 
-This command add a new NodeType n2 with InstanceCount of 5, with a -DurabiltyTier of Bronze.
+This command add a new NodeType n2 with InstanceCount of 5, and -DurabiltyTier of Bronze.
 
 ## PARAMETERS
 
 ### -Capacity
-Capacity
+Capacity.
 
 ```yaml
 Type: Int32
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sku
-The sku name.
+The Sku name.
 
 ```yaml
 Type: String
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -VmPassword
-The password of login to the Vm
+The password for logging into the Vm.
 
 ```yaml
 Type: SecureString
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -VmUserName
-The user name for login to Vm
+The user name for logging into the Vm.
 
 ```yaml
 Type: String
