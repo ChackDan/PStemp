@@ -7,7 +7,7 @@ schema: 2.0.0
 # Get-AzureRmServiceFabricCluster
 
 ## SYNOPSIS
-Get the cluster resource details
+Get the cluster resource details.
 
 ## SYNTAX
 

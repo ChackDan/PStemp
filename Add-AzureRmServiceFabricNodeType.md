@@ -7,27 +7,27 @@ schema: 2.0.0
 # Add-AzureRmServiceFabricNodeType
 
 ## SYNOPSIS
-Add a node type to the existing cluster
+Add a new node type to an existing cluster.
 
 ## SYNTAX
 
 ```
 Add-AzureRmServiceFabricNodeType [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
- -Capacity <Int32> -VmUserName <String> -VmPassword <SecureString> [-Sku <String>] [-Tier <String>] [-WhatIf]
+ -Capacity <Int32> -VmUserName <String> -VmPassword <SecureString> [-Sku <String>] [-DurabiltyTier <String>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Add a new node type to the cluster 
+Add a new node type to and existing cluster.
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> Add-AzureRmServiceFabricNodeType -ResourceGroupName myResourceGroup -ClusterName myCluster -NodeTypeName n2 -Capacity 5 -VmUserName adminName -VmPassword User@123
+PS C:\> Add-AzureRmServiceFabricNodeType -ResourceGroupName myResourceGroup -Name myCluster -NodeType n2 -InstanceCount 5 -VmUserName adminName -VmPassword Password#1234 -Sku Standand_D1_v2
 ```
 
-This command will add a new node type n2 with capacity with 5, and the vm admin username is adminName password is User@123
+This command add a new NodeType n2 with InstanceCount of 5, with a -DurabiltyTier of Bronze.
 
 ## PARAMETERS
 
@@ -62,7 +62,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specify the name of the cluster```yaml
+Name of the cluster.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: ClusterName
@@ -75,7 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-The node type name```yaml
+The node type name.
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: 
@@ -88,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group.
+Name of the resource group.
 
 ```yaml
 Type: String
@@ -103,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sku
-The sku name
+The sku name.
 
 ```yaml
 Type: String
@@ -117,8 +120,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Tier
-Tier
+### -DurabiltyTier
+Durablity Tier.
 
 ```yaml
 Type: String
@@ -163,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs or not.
 
 ```yaml
 Type: SwitchParameter

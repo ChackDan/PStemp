@@ -7,7 +7,7 @@ schema: 2.0.0
 # Remove-AzureRmServiceFabricSettings
 
 ## SYNOPSIS
-Remove one or multiple ServiceFabric settings from the cluster
+Remove one or multiple ServiceFabric settings from the cluster fabric settings.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Remove-AzureRmServiceFabricSettings [-ResourceGroupName] <String> [-Name] <Strin
 ```
 
 ## DESCRIPTION
-The **Remove-AzureRmServiceFabricSettings** can remove ServiceFabric settings from the cluster
+Use **Remove-AzureRmServiceFabricSettings** to remove Service Fabric settings from the cluster.
 
 ## EXAMPLES
 
@@ -33,7 +33,7 @@ The **Remove-AzureRmServiceFabricSettings** can remove ServiceFabric settings fr
 PS c:> Remove-AzureRmServiceFabricSettings -ResourceGroupName myResourceGroup -ClusterName myCluster -Section EseStore -Parameter Maxcursors
 ```
 
-This command will remove parameter Maxcursors under section EseStore
+This command removes the settings Maxcursors from the EseStore section.
 
 ## PARAMETERS
 
@@ -53,7 +53,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specify the name of the cluster```yaml
+Name of the cluster.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: ClusterName
@@ -81,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group.
+Name of the resource group.
 
 ```yaml
 Type: String
@@ -111,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -SettingsSectionDescriptions
-Client authentication type
+Fabric settings.
 
 ```yaml
 Type: PSSettingsSectionDescription[]

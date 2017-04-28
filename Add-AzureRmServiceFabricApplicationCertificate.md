@@ -32,7 +32,7 @@ Add-AzureRmServiceFabricApplicationCertificate [-ResourceGroupName] <String> [-N
 ```
 
 ## DESCRIPTION
-The **Add-AzureRmServiceFabricApplicationCertificate** installs the certificate to the all nodes in the cluster. You can specify a certificate you already have or have the system generate a new one for you and upload it to a new or existing Azure key vault.
+TUse **Add-AzureRmServiceFabricApplicationCertificate** to install a certificate to the all nodes in the cluster. You can specify a certificate you already have or have the system generate a new one for you and upload it to a new or existing Azure key vault.
 
 ## EXAMPLES
 

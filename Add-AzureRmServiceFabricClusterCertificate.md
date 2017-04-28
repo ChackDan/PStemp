@@ -32,7 +32,7 @@ Add-AzureRmServiceFabricClusterCertificate [-ResourceGroupName] <String> [-Name]
 ```
 
 ## DESCRIPTION
-The **Add-AzureRmServiceFabricClusterCertificate** add a secondary cluster certificate, either from existing Azure key vault 
+Use **Add-AzureRmServiceFabricClusterCertificate** to add a secondary cluster certificate, either from existing Azure key vault 
 or creating an new Azure key vault using existing certificate provided or from an new self signed certificate created 
 It will override the secondary cluster if there is any.
 

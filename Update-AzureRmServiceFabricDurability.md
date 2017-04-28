@@ -7,7 +7,7 @@ schema: 2.0.0
 # Update-AzureRmServiceFabricDurability
 
 ## SYNOPSIS
-Update durability of the cluster
+Update durability tier and VM SKU of a nodetype in a cluster.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <Str
 ```
 
 ## DESCRIPTION
-The **Update-AzureRmServiceFabricDurability** can update durability and SKU of the cluter 
+Use **Update-AzureRmServiceFabricDurability** to update durability and SKU of a NodeType in a cluster.
 
 ## EXAMPLES
 
@@ -26,7 +26,7 @@ The **Update-AzureRmServiceFabricDurability** can update durability and SKU of t
 PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName clusterresourcegroup -ClusterName mycluster -Level Silver -NodeTypeName nt1
 ```
 
-This command will change durability level of the node type 'nt1' to silver
+This command changes durability level of the node type 'nt1' to silver.
 
 ## PARAMETERS
 
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -Level
-DurabilityLevel
+DurabilityTier
 
 ```yaml
 Type: DurabilityLevel
@@ -62,7 +62,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specify the name of the cluster```yaml
+Name of the cluster.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: ClusterName
@@ -75,7 +77,9 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-Specify Service Fabric node type name```yaml
+Service Fabric node type name.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: 
@@ -103,7 +107,9 @@ Accept wildcard characters: False
 ```
 
 ### -Sku
-Specify the SKU of the node type```yaml
+SKU of the node type.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: 
@@ -116,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs or not.
 
 ```yaml
 Type: SwitchParameter

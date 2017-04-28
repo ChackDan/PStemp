@@ -7,7 +7,7 @@ schema: 2.0.0
 # Set-AzureRmServiceFabricSettings
 
 ## SYNOPSIS
-Add or update one or multiple ServiceFabric settings to the cluster
+Add or update one or multiple ServiceFabric settings in a cluster.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Set-AzureRmServiceFabricSettings [-ResourceGroupName] <String> [-Name] <String>
 ```
 
 ## DESCRIPTION
-The **Set-AzureRmServiceFabricSettings** can add ServiceFabric settings to the cluster
+Use **Set-AzureRmServiceFabricSettings** to add or update ServiceFabric settings in the cluster.
 
 ## EXAMPLES
 
@@ -33,7 +33,7 @@ The **Set-AzureRmServiceFabricSettings** can add ServiceFabric settings to the c
 PS c:\> Set-AzureRmServiceFabricSettings -ResourceGroupName myResourceGroup -ClusterName myCluster -Section EseStore -Parameter Maxcursors -Value 1000
 ```
 
-This command will Set 'Maxcursors' to value '1000' under the section 'EseStore'
+This command will Set 'Maxcursors' to value '1000' under the section 'EseStore'.
 
 ### Example 2
 ```
@@ -66,7 +66,7 @@ PS c:\>$arry=$settingsSectionDescription1 , $settingsSectionDescription2
 PS c:\> Set-AzureRmServiceFabricSettings -SettingsSectionDescriptions $arry -ClusterName myclustername -ResourceGroupName clusterresourcegroup
 ```
 
-This example will batch update fabric settings
+This example updates a set of fabric settings.
 
 ## PARAMETERS
 
@@ -86,7 +86,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specify the name of the cluster```yaml
+Name of the cluster.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: ClusterName
@@ -114,7 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group.
+Name of the resource group.
 
 ```yaml
 Type: String
@@ -144,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -SettingsSectionDescriptions
-Client authentication type
+Fabric Settings.
 
 ```yaml
 Type: PSSettingsSectionDescription[]
@@ -159,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Value
+Config Value
 
 ```yaml
 Type: String

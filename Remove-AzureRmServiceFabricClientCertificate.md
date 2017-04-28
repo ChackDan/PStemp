@@ -7,7 +7,7 @@ schema: 2.0.0
 # Remove-AzureRmServiceFabricClientCertificate
 
 ## SYNOPSIS
-Remove client certificate from the cluster
+Remove a client certificate(s) or certificate subject (s) names from being used for client authenticaton to the cluster
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Remove-AzureRmServiceFabricClientCertificate [-ResourceGroupName] <String> [-Nam
 ```
 
 ## DESCRIPTION
-The **Remove-AzureRmServiceFabricClientCertificate** can remove the certificate either by common name and issuer thumbprint or certificate thumbprint
+Use **Remove-AzureRmServiceFabricClientCertificate** to remove a client certificate(s) or certificate subject (s) names from being used for client authenticaton to the cluster
 
 ## EXAMPLES
 
@@ -46,7 +46,7 @@ The **Remove-AzureRmServiceFabricClientCertificate** can remove the certificate 
 PS c:> Remove-AzureRmServiceFabricApplicationCertificate -ResourceGroupName myResourceGroup -ClusterName myCluster -Thumbprint 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A
 ```
 
-This command will remove thumbprint 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A from the cluster
+This command removes thumbprint 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A from being used for client authentication to the cluster
 
 ### Example 2
 ```
@@ -54,12 +54,14 @@ PS c:> $table = @{"abc.com;AF06E4BFCBA05DCB59C42720136EC19DBA0A8E9F"=$true}
 PS c:>Remove-AzureRmServiceFabricClientCertificate -CommonNameIssuersAndFlags $table -ClusterName myclustername -ResourceGroupName myresourcegroup
 ```
 
-This command will remove common name with abc.com and issue thumbprint with 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A from the cluster
+This command removes the certificates with  common name with abc.com and issue thumbprint of 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A from being used for client authentication to the cluster.
 
 ## PARAMETERS
 
 ### -AdminClientThumbprints
-Specify client certificate thumbprint which only has admin permission```yaml
+Client certificate thumbprint that have admin privilages to the cluster
+
+```yaml
 Type: String[]
 Parameter Sets: MultipleUpdatesWithThumbprint
 Aliases: 
@@ -72,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommonName
-Specify client certificate common name
+Client certificate common name.
 
 ```yaml
 Type: String
@@ -87,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommonNames
-Specify client common name , issuer thumbprint and authentication type
+Client common names , issuer thumbprint and authentication type.
 
 ```yaml
 Type: PSClientCertificateCommonName[]
@@ -117,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -IssuerThumbprint
-Specify client certificate issuer thumbprint
+Certificate issuer thumbprint.
 
 ```yaml
 Type: String
@@ -132,7 +134,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specify the name of the cluster```yaml
+Name of the cluster.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: ClusterName
@@ -145,7 +149,9 @@ Accept wildcard characters: False
 ```
 
 ### -ReadonlyClientThumbprints
-Specify client certificate thumbprint which only has read only permission```yaml
+Client certificate thumbprint that has read only permissions to the cluster.
+
+```yaml
 Type: String[]
 Parameter Sets: MultipleUpdatesWithThumbprint
 Aliases: 
@@ -158,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group.
+Name of the resource group.
 
 ```yaml
 Type: String
@@ -173,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -Thumbprint
-Specify client certificate thumbprint
+Certificate thumbprint.
 
 ```yaml
 Type: String
@@ -188,7 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs or not.
 
 ```yaml
 Type: SwitchParameter

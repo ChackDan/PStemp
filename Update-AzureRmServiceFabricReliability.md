@@ -7,7 +7,7 @@ schema: 2.0.0
 # Update-AzureRmServiceFabricReliability
 
 ## SYNOPSIS
-Update reliability of the cluster
+Update reliability tier of the primary node type in a cluster.
 
 ## SYNTAX
 
@@ -17,16 +17,16 @@ Update-AzureRmServiceFabricReliability [-ResourceGroupName] <String> [-Name] <St
 ```
 
 ## DESCRIPTION
-The **Update-AzureRmServiceFabricReliability** can update reliability of the cluster
+Use **Update-AzureRmServiceFabricReliability** to update reliability of the primary node type in a  cluster.
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS c:> Add-AzureRmServiceFabricReliability -ResourceGroupName myResourceGroup -ClusterName myCluster -ReliabilityLevel Silver
+PS c:> Add-AzureRmServiceFabricReliability -ResourceGroupName myResourceGroup -ClusterName myCluster -ReliabilityTier Silver
 ```
 
-This command will change reliability level of the cluster to silver
+This command changes reliability level of the primary nodetype to silver.
 
 ## PARAMETERS
 
@@ -61,7 +61,9 @@ Accept wildcard characters: False
 ```
 
 ### -Level
-VM instance number```yaml
+Reliability tier
+
+```yaml
 Type: ReliabilityLevel
 Parameter Sets: (All)
 Aliases: ReliabilityLevel
@@ -75,7 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specify the name of the cluster```yaml
+Name of the cluster
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: ClusterName
@@ -88,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group.
+Name of the resource group.
 
 ```yaml
 Type: String

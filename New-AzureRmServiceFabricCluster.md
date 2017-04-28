@@ -49,7 +49,7 @@ The four options are detailed below. Scroll down for explanations of each of the
 
 ## EXAMPLES
 
-### Specify only the cluster size, the cert subject name and the OS to deploy a cluster
+### Specify only the cluster size, the cert subject name and the OS to deploy a cluster.
 
 This is the simplest of all three options, and also takes in the least amount of parameter, and so is a good one if you are new to service fabric and/or just want a test cluster to deploy your applications to.
 

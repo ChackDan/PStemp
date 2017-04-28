@@ -7,7 +7,7 @@ schema: 2.0.0
 # Remove-AzureRmServiceFabricClusterCertificate
 
 ## SYNOPSIS
-Remove cluster certificate
+Remove cluster certificate from being used for cluster security in a cluster.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Remove-AzureRmServiceFabricClusterCertificate -Thumbprint <String> [-Name] <Stri
 ```
 
 ## DESCRIPTION
-The **Remove-AzureRmServiceFabricClusterCertificate** can remove a secondary cluster certificate from the cluster
+Use **Remove-AzureRmServiceFabricClusterCertificate** to remove a cluster certificate from the cluster, as long as there is another valid certificate that is already in use in the cluster. 
 
 ## EXAMPLES
 
@@ -26,7 +26,7 @@ The **Remove-AzureRmServiceFabricClusterCertificate** can remove a secondary clu
 PS C:\> Remove-AzureRmServiceFabricClusterCertificate -ResourceGroupName myResourceGroup -ClusterName myCluster -Thumbprint 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A
 ```
 
-This command will remove the certificate with thumbprint 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A fromt the cluster certificate
+This command removes the certificate with thumbprint 5F3660C715EBBDA31DB1FFDCF508302348DE8E7A from being used for cluster security.
 
 ## PARAMETERS
 
@@ -46,7 +46,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specify the name of the cluster```yaml
+Name of the cluster.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: ClusterName
@@ -59,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group.
+Name of the resource group.
 
 ```yaml
 Type: String
@@ -74,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Thumbprint
-Specify the cluster thumbprint which to be removed
+Cluster thumbprint.
 
 ```yaml
 Type: String
@@ -89,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs or not.
 
 ```yaml
 Type: SwitchParameter
