@@ -7,7 +7,7 @@ schema: 2.0.0
 # Add-AzureRmServiceFabricNodes
 
 ## SYNOPSIS
-Add nodes to the specific node type
+Add nodes to the specific node type in your cluster.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Add-AzureRmServiceFabricNodes [-ResourceGroupName] <String> [-Name] <String> -No
 ```
 
 ## DESCRIPTION
-The **Add-AzureRmServiceFabricNodes** can add nodes to the specific node type
+Use **Add-AzureRmServiceFabricNodes** to add nodes to the specific node type in your cluster. You just need to specify the number of nodes you want to add to a Node Type, the system adds it to the nodetype.
 
 ## EXAMPLES
 
@@ -46,7 +46,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specify the name of the cluster```yaml
+Name of the cluster.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: ClusterName
@@ -59,7 +61,9 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-Node type name```yaml
+Node type name.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: 
@@ -72,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Number
-VM instance number
+VM instance number.
 
 ```yaml
 Type: Int32
@@ -87,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group.
+Name of the resource group.
 
 ```yaml
 Type: String
@@ -102,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs or not.
 
 ```yaml
 Type: SwitchParameter
